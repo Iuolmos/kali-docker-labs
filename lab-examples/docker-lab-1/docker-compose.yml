@@ -1,0 +1,32 @@
+version: "3.9"
+
+networks:
+  lab_net_1:
+    driver: bridge
+
+services:
+  target_web:
+    image: httpd:2.4
+    container_name: lab_target_web
+    networks:
+      - lab_net_1
+    ports:
+      - "8081:80"   # opcional si quieres acceso desde host
+    restart: unless-stopped
+
+  target_db:
+    image: mysql:8
+    container_name: lab_target_db
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: labdb
+    networks:
+      - lab_net_1
+    restart: unless-stopped
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
+# Usa redes custom para aislar cada lab; evita usar "host" network.
