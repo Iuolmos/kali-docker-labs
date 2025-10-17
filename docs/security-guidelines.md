@@ -1,0 +1,7 @@
+- Usar imágenes oficiales y escanearlas por vulnerabilidades (Trivy, Clair).
+- Mantener Docker y host actualizados. :contentReference[oaicite:10]{index=10}
+- Crear redes Docker custom por lab; no usar network: host.
+- Limitar capacidades de contenedores (`cap_drop`, `read_only` si es posible).
+- No mapear volúmenes sensibles del host; usar volumes dedicados.
+- Controlar secrets (no poner contraseñas en .env sin cifrar).
+- Controlar quién puede usar Docker en el host (grupo `docker` equivale a root).
