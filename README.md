@@ -30,6 +30,3 @@ Este repositorio explica cómo montar un laboratorio local para prácticas de **
 
 ## Contribuciones
 Pull requests con nuevos labs, ejercicios y correcciones son bienvenidos. Usa la rama `main` protegida y un `PR` por funcionalidad.
-
-## Licencia
-MIT — ver `LICENSE`.
